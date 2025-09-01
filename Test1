@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+public class Copy {
+
+    public static void main(String[] args) {
+        String nama, kelurahan;
+
+        // var input
+        int posisiAwal, posisiAkhir, biayaBeban, PPJ;
+
+        // var output
+        int pemakaian, tarifListrik, tarifPPJ, totalBayar;
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Program penghitung pemakaian listrik sederhana");
+
+        System.out.printf("%-33s%-3c", "Masukkan nama", ':');
+        nama = input.nextLine();
+
+        System.out.printf("%-33s%-3c", "Kelurahan", ':');
+        kelurahan = input.nextLine();
+
+        System.out.printf("%-33s%-3c", "Masukkan posisi awal Kwh Meter", ':');
+        posisiAwal = input.nextInt();
+
+        System.out.printf("%-33s%-3c", "Masukkan posisi akhir Kwh Meter", ':');
+        posisiAkhir = input.nextInt();
+
+        System.out.printf("%-33s%-3c", "Masukkan biaya beban saat ini", ':');
+        biayaBeban = input.nextInt();
+
+        System.out.printf("%-33s%-3c", "Masukkan PPJ (dalam persen)", ':');
+        PPJ = input.nextInt();
+
+        // rumus output
+        pemakaian = posisiAkhir - posisiAwal;
+        tarifListrik = biayaBeban * pemakaian;
+        tarifPPJ = tarifListrik * PPJ / 100;
+        totalBayar = tarifListrik + tarifPPJ;
+
+        System.out.println("===================PLN Java===================");
+        System.out.printf("%-30s%-3c%s\n", "Nama", ':', nama);
+        System.out.printf("%-30s%-3c%s\n", "Kelurahan", ':', kelurahan);
+        System.out.printf("%-30s%-3c%d%s\n", "Pemakaian bulan ini", ':', pemakaian, " Kwh Meter");
+        System.out.printf("%-30s%-3c%s%d%s\n", "Tarif Listrik", ':', "Rp ", tarifListrik, ",-");
+        System.out.printf("%-4s%-2d%-24s%-3c%s%d%s\n", "PPJ", PPJ, "%", ':', "Rp ", tarifPPJ, ",-");
+        System.out.printf("%-30s%-3c%s%d%s\n", "Total Bayar", ':', "Rp ", totalBayar, ",-");
+        System.out.println("==============================================");
+
+        input.close();
+    }
+}
