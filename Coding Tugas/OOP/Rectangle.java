@@ -1,5 +1,5 @@
 package OOP;
-
+// Method untuk buat rectangle 
 public class Rectangle {
     double width;
     double height;
@@ -12,7 +12,7 @@ public class Rectangle {
     public Rectangle(double width, double height) {
         this.width = width;
         this.height = height;
-    }
+    } // this. digunakan kalau ada variable sama (this.width = lebar milik objek ini (yang baru dibuat).)
 
     public double getArea() {
         return width * height;
