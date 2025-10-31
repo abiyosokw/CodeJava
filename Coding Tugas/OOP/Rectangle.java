@@ -22,3 +22,19 @@ public class Rectangle {
         return 2 * (width + height);
     }
 }
+//UML
+/* 
++---------------------+
+|     Rectangle       |
++---------------------+
+| - width : double    |
+| - height : double   |
++---------------------+
+| + Rectangle()       |
+| + Rectangle(width,  |
+|   height)           |
+| + getArea(): double |
+| + getPerimeter():   |
+|   double            |
++---------------------+
+*/
